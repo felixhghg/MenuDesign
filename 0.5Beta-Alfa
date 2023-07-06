@@ -1,0 +1,117 @@
+
+local Version = "0.5 Beta-Alfa"
+
+local screen = game.Players.LocalPlayer.PlayerGui.ShopGui
+
+screen.MainFrame.TabFrame.ShopStyleLS:Destroy()
+local q = screen.MainFrame.TabFrame.SettingsFrame.ScrollingFrameSettings
+local ss = screen.MainFrame.TabFrame.ShopFrame.ScrollingFrameChests
+local TAB = screen.MainFrame.TopBar
+
+
+q.SettingStyle.Wood:Destroy()
+q.SettingStyle.ToggleBG:Destroy()
+q.SettingStyle.Blue:Destroy()
+q.SettingStyle.Black:Destroy()
+q.SettingStyle.Red:Destroy()
+q.SettingStyle.Brown:Destroy()
+q.SettingStyle.Round:Destroy()
+q.SettingStyle.Transparent:Destroy()
+q.SettingStyle.SettingText.Text = "NewDesigner "..Version
+local BUTT = q.SettingStyle.PurpleBlue
+
+BUTT.MouseButton1Up:Connect(function()
+	for _,v in pairs(q:GetDescendants()) do
+		local valer = v
+		for _,l in pairs(valer:GetDescendants()) do
+			if l.ClassName == "TextButton" or l.ClassName == "TextLabel" then
+				l.Font = Enum.Font.Jura
+			elseif l.ClassName == "Frame" then
+				for _,kel in pairs(valer:GetDescendants()) do
+					if kel.ClassName == "TextButton" or kel.ClassName == "TextLabel" then
+						kel.Font = Enum.Font.Jura
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(ss:GetDescendants()) do
+		local valer = v
+		for _,l in pairs(valer:GetDescendants()) do
+			if l.ClassName == "TextButton" or l.ClassName == "TextLabel" then
+				l.Font = Enum.Font.Jura
+			elseif l.ClassName == "ImageButton" then
+				for _,kel in pairs(valer:GetDescendants()) do
+					if kel.ClassName == "TextButton" or kel.ClassName == "TextLabel" then
+						kel.Font = Enum.Font.Jura
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(ss.Parent.SelectedFrame:GetDescendants()) do
+		local valer = v
+		for _,l in pairs(valer:GetDescendants()) do
+			if l.ClassName == "TextButton" or l.ClassName == "TextLabel" then
+				l.Font = Enum.Font.Jura
+			elseif l.ClassName == "Frame" then
+				for _,kel in pairs(valer:GetDescendants()) do
+					if kel.ClassName == "TextButton" or kel.ClassName == "TextLabel" then
+						kel.Font = Enum.Font.Jura
+					end
+				end
+			end
+		end
+	end
+	for _,V in pairs(TAB:GetDescendants()) do
+		if V.ClassName == "ImageButton" and V.Name ~= "ExitButton" then
+			V.TabName.Font = Enum.Font.Jura
+		end
+	end
+	local TOB = screen.MainFrame.TabFrame.TeamsFrame.SelectedFrame
+	TOB.BuyButton.Font = Enum.Font.Jura
+	TOB.TextBox.Font = Enum.Font.Jura
+	
+	local oo = Instance.new("Frame",TAB)
+	oo.Name = "NEW"
+	oo.Size = TAB.Roundify2.Size
+	oo.BackgroundTransparency = 0.5
+	oo.BackgroundColor3 = Color3.new(0,0,0)
+	local c = Instance.new("UIStroke",oo)
+	c.Color = Color3.fromRGB(255,255,255)
+	c.Thickness= 2
+	local p = Instance.new("UICorner",oo)
+	 
+
+	TAB.Roundify2:Destroy()
+	TAB.Roundify1:Destroy()
+	TAB.RoundifyWood:Destroy()
+	TOB.Roundify2:Destroy()
+	TOB.Roundify1:Destroy()
+	TOB.RoundifyWood:Destroy()
+	local TOB = screen.MainFrame.TabFrame.SlotsFrame.SelectedFrame
+	TOB.TextBox.Font = Enum.Font.Jura
+	TOB.SaveButton.Font = Enum.Font.Jura
+	TOB.LoadButton.Font = Enum.Font.Jura
+	TOB.Roundify2:Destroy()
+	TOB.Roundify1:Destroy()
+	TOB.RoundifyWood:Destroy()
+	
+	
+	
+	local TOB = screen.MainFrame.TabFrame.ChallengeFrame.SelectedFrame
+	for _,v in pairs(TOB:GetDescendants()) do
+		if v.ClassName == "TextButton" or v.ClassName == "TextLabel" then
+			v.Font = Enum.Font.Jura
+		end
+	end
+	for _,v in pairs(TOB.Parent.ScrollingFrame:GetDescendants()) do
+		if v.ClassName == "TextButton" or v.ClassName == "TextLabel" then
+			v.Font = Enum.Font.Jura
+		end
+	end
+	TOB.Roundify2:Destroy()
+	TOB.Roundify1:Destroy()
+	TOB.RoundifyWood:Destroy()
+
+end)
