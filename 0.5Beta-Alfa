@@ -17,7 +17,7 @@ q.SettingStyle.Red:Destroy()
 q.SettingStyle.Brown:Destroy()
 q.SettingStyle.Round:Destroy()
 q.SettingStyle.Transparent:Destroy()
-q.SettingStyle.SettingText.Text = "NewDesigner "..Version
+q.SettingStyle.SettingText.Text = "V. "..Version.." MenuDesign"
 local BUTT = q.SettingStyle.PurpleBlue
 
 BUTT.MouseButton1Up:Connect(function()
